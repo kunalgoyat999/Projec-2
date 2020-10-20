@@ -1,0 +1,13 @@
+{
+  "name": "1.0.0",
+  "version": "1.0.0",
+  "description": "Learing node,express and mongodb",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "start:prod": "node_env=production nodemon server.js"
+  },
+  "dependencies": {
+    "mongoose": "^5.10.9"
+  }
+}

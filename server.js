@@ -17,18 +17,21 @@ const mongoose  = require('mongoose');
 
 /////////
 // TO add enviroment variable in console
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
 /////////
 
 
 /////////
 //TO attach the file of config.env to server.js
 /////////
-dotenv.config({path: './config.env'})
+dotenv.config({path: './config.env'});
 // console.log(process.env)
 //////////
 
-const app = require('./app')
+
+
+const app = require('./app');
+
 
 
 ///////////////////////////
@@ -36,11 +39,9 @@ const app = require('./app')
 ///////////////////////////
 
 //const DB = process.env.DATABASE.replace(
-const DB = process.env.DATABASE_LOCAL.replace(
-    '<PASSWORD>',
- process.env.DATABASE_PASSWORD);
+const DB = process.env.DATABASE;
 
-mongoose.connect(process.env.DATABASE_LOCAL, {
+mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
@@ -55,7 +56,7 @@ mongoose.connect(process.env.DATABASE_LOCAL, {
 
 
 
-const port = process.env.PORT ||3000;
+const port = process.env.port || 3000;
 app.listen(port, () => {
     console.log(`app running on port ${port}....`)
 })
